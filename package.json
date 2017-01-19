@@ -1,0 +1,36 @@
+{
+  "name": "cordova-unityads-sdk",
+  "version": "1.0.0",
+  "description": "Add Unity Ads SDK to your Ionic 2 application.",
+  "cordova": {
+    "id": "cordova-unityads-sdk",
+    "platforms": [
+      "android",
+      "amazon-fireos",
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/divampo/cordova-unityads-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/divampo/cordova-unityads-sdk/issues"
+  },
+  "keywords": [
+    "cordova",
+    "phonegap",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "ios",
+    "ionic",
+    "sdk",
+    "unity",
+    "unityads"
+  ],
+  "author": {
+    "name": "Dmitry Serpakov"
+  },
+  "license": "MIT"
+}

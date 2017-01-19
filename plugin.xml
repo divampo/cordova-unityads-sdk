@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="cordova-unityads-sdk"
+    version="1.0.0">
+    <name>Unity Ads intagration with Cordova/Ionic 2 app</name>
+    <description>Add Unity Ads SDK to your Ionic 2 application.</description>
+    <author>Dmitry Serpakov</author>
+    <keywords>cordova,phonegap,ecosystem:cordova,cordova-android,cordova-ios,android,ios,ionic,sdk,unity,unityads</keywords>
+    <repo>https://github.com/divampo/cordova-unityads-sdk.git</repo>
+    <issue>https://github.com/divampo/cordova-unityads-sdk/issues</issue>
+
+    <engines>
+        <engine name="cordova" version=">=3.0" />
+    </engines>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+            <uses-permission android:name="android.permission.INTERNET" />
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <activity
+                android:name="com.unity3d.ads.adunit.AdUnitActivity"
+                android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
+                android:hardwareAccelerated="true"
+                android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+            <activity
+                android:name="com.unity3d.ads.adunit.AdUnitSoftwareActivity"
+                android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
+                android:hardwareAccelerated="false"
+                android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+        </config-file>
+
+        <source-file src="src/android/classes.jar" target-dir="libs" />
+        <source-file src="src/android/UnityAdsAdapter.jar" target-dir="libs" />
+    </platform>
+
+    <!-- fireos -->
+    <platform name="amazon-fireos">
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+            <uses-permission android:name="android.permission.INTERNET" />
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <activity
+                android:name="com.unity3d.ads.adunit.AdUnitActivity"
+                android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
+                android:hardwareAccelerated="true"
+                android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+            <activity
+                android:name="com.unity3d.ads.adunit.AdUnitSoftwareActivity"
+                android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
+                android:hardwareAccelerated="false"
+                android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+        </config-file>
+
+        <source-file src="src/android/classes.jar" target-dir="libs" />
+        <source-file src="src/android/UnityAdsAdapter.jar" target-dir="libs" />
+    </platform>
+
+    <!-- ios -->
+    <platform name="ios">
+        <header-file src="src/ios/Headers/UADSMediationMetaData.h"/>
+         <header-file src="src/ios/Headers/UADSMetaData.h"/>
+         <header-file src="src/ios/Headers/UADSPlayerMetaData.h"/>
+         <header-file src="src/ios/Headers/UnityAds.h"/>
+         <header-file src="src/ios/Headers/UnityAdsExtended.h"/>
+
+         <source-file src="src/ios/libAdapterUnity.a" framework="true"/>
+         <source-file src="src/ios/UnityAds" framework="true"/>
+    </platform>
+
+</plugin>
